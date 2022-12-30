@@ -1,0 +1,11 @@
+
+[
+    {
+        "id": 1,
+        "name": "melanie",
+        "email": "lezcano@mail.com",
+        "edad": 25,
+        "pass": "123456",
+        "colors": "#ff637D"
+    }
+]

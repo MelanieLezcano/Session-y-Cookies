@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body style="background-color:#66d7d1;">
+    <main>
+        <h1>Login</h1>
+        <form action="/users/login" method="post">
+            <div>
+                <label for="email">Ingrese su email</label>
+                <input type="email" name="email" id="email" placeholder="Ingrese su email">
+                <% if (locals.errors && errors.email) { %>
+                    <small><%= errors.email.msg %></small>
+                <% } %>
+            </div>
+            <div>
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass" placeholder="Ingresar una contraseña">
+                <% if (locals.errors && errors.pass) { %>
+                    <small><%= errors.pass.msg %></small>
+                <% } %>
+            </div>
+            <div>
+                <input class="recordarme" type="checkbox" name="recordarme" id="recordarme" value="recordarme">
+                <label for="recordarme">Recordarme</label>
+            </div>
+            <div>
+                <button type="submit">Iniciar sesion</button>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

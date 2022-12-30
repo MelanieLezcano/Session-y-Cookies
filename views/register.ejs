@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body style="background-color:#66d7d1;">
+    <main class="home">
+      <label for="nombre">Ingrese su  nombre</label>
+      <input type="text" name="name" id="name" placeholder="Ingrese su nombre">
+      <% if (locals.errors && errors.name) { %>
+          <small><%= errors.name.msg %></small>
+      <% } %>
+      <div>
+        <!-- cambiale los colores -->
+        <label for="colors">Seleccione un color:</label>
+        <select name="colors" id="colors">
+        <option value="#ff637D">Rosa</option>
+        <option value="#f4f1bb">Amarillo claro</option>
+        <option value="#66d7d1">Cian</option>
+        <option value="#eaf2e3">Gris</option>
+        <option value="#fff87">Amarillo</option>
+        </select>
+        <% if (locals.errors && errors.colors) { %>
+            <small><%= errors.colors.msg %></small>
+        <% } %>
+    </div>
+    <div>
+      <label for="email">Ingrese su email</label>
+      <input type="email" name="email" id="email" placeholder="Ingrese su email">
+      <% if (locals.errors && errors.email) { %>
+          <small><%= errors.email.msg %></small>
+      <% } %>
+  </div>
+  <div>
+    <label for="edad">Ingrese su edad</label>
+    <input type="number" name="edad" id="edad" placeholder="Ingrese su edad">
+    <% if (locals.errors && errors.edad) { %>
+        <small><%= errors.edad.msg %></small>
+    <% } %>
+</div>
+<div>
+  <button type="submit">Enviar</button>
+</div>
+
+    </main>
+  </body>
+</html>
