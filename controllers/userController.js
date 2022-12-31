@@ -9,18 +9,21 @@ const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/user.js
 
 module.exports = {
     perfil: (req,res) =>{
-        res.render('perfil')
+        res.render('perfil',{
+            
+        })
     },
     register: (req, res) => {
         let colores = ["Rosa", "Amarillo claro", "Cian", "Gris", "Amarillo"];
         res.render('register',{colores, texto: 'Completar'});
     },
     processRegister:  (req, res) => {
+/*         return res.send(req.body) */
         const {name, email, edad, pass, colors} = req.body
         let colores = ["Rosa", "Amarillo claro", "Cian", "Gris", "Amarillo"];
         let errors = validationResult(req);
-
-
+        
+        
         if (errors.isEmpty()) {
             let usuarioNuevo = {
                 id:users[users.length - 1].id + 1,
@@ -32,8 +35,8 @@ module.exports = {
             };
             users.push(usuarioNuevo);
             guardar(users)
-    
-            res.redirect('/')
+            
+            res.redirect('/users/perfil')
         }else {
             return res.render('register', { 
                 colores,
@@ -61,12 +64,13 @@ module.exports = {
                 id : usuario.id,
                 nombre : usuario.name,
                 color : usuario.colors,
-                email : usuario.email
+                email : usuario.email,
+                edad : usuario.edad
             }
             if(recordarme){
                 res.cookie('Login',req.session.userLogin,{maxAge: 1000 * 60 * 60})
             }
-            return res.redirect('/')
+            return res.redirect('/users/perfil')
         } else {
             return res.render('login', {
                 errors: errors.mapped(),

@@ -5,6 +5,7 @@
   </head>
   <body style="background-color:#66d7d1;">
     <main class="home">
+      <form action="" method="post">
       <label for="nombre">Ingrese su  nombre</label>
       <input type="text" name="name" id="name" placeholder="Ingrese su nombre">
       <% if (locals.errors && errors.name) { %>
@@ -24,6 +25,13 @@
         <% } %>
     </div>
     <div>
+      <label for="edad">Ingrese su edad</label>
+      <input type="number" name="edad" id="edad" placeholder="Ingrese su edad">
+      <% if (locals.errors && errors.edad) { %>
+          <small><%= errors.edad.msg %></small>
+      <% } %>
+  </div>
+    <div>
       <label for="email">Ingrese su email</label>
       <input type="email" name="email" id="email" placeholder="Ingrese su email">
       <% if (locals.errors && errors.email) { %>
@@ -31,16 +39,23 @@
       <% } %>
   </div>
   <div>
-    <label for="edad">Ingrese su edad</label>
-    <input type="number" name="edad" id="edad" placeholder="Ingrese su edad">
-    <% if (locals.errors && errors.edad) { %>
-        <small><%= errors.edad.msg %></small>
+    <label for="pass">Contraseña</label>
+    <input type="password" name="pass" id="pass" placeholder="Ingresar una contraseña">
+    <% if (locals.errors && errors.pass) { %>
+        <small><%= errors.pass.msg %></small>
+    <% } %>
+</div>
+<div>
+    <label for="pass2">Repetir Contraseña</label>
+    <input type="password" name="pass2" id="pass2" placeholder="Repetir contraseña">
+    <% if (locals.errors && errors.pass2) { %>
+        <small><%= errors.pass2.msg %></small>
     <% } %>
 </div>
 <div>
   <button type="submit">Enviar</button>
 </div>
-
+</form>
     </main>
   </body>
 </html>

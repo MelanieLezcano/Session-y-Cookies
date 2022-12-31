@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <title>Perfil</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-<body style="background-color: #66d7d1;">
+
+<body style="background: <%= locals.userLogin.color %>">
     <main>
-        <h2>Hola <%= usuario.nombreUsuario %></h2>
-        <h4>Elegiste el color: <%= usuario.colorSeleccionado %></h4>
-        <h4>Tu email es: <%= usuario.emailUsuario %> </h4>
-        <h4>Y tu edad es: <%= usuario.edadUsuario %> </h4>
+        <h2>Hola <%= locals.userLogin.nombre %>
+        </h2>
+        <h4>Elegiste el color: <%= locals.userLogin.color %>
+        </h4>
+        <h4>Tu email es: <%= locals.userLogin.email %>
+        </h4>
+        <h4>Y tu edad es: <%= locals.userLogin.edad %>
+        </h4>
     </main>
 </body>
+
 </html>

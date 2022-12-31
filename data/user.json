@@ -1,4 +1,3 @@
-
 [
     {
         "id": 1,
@@ -6,6 +5,14 @@
         "email": "lezcano@mail.com",
         "edad": 25,
         "pass": "123456",
+        "colors": "#ff637D"
+    },
+    {
+        "id": 2,
+        "name": "melanie",
+        "email": "melanie.s.lezcano@gmail.com",
+        "edad": "25",
+        "pass": "$2a$10$tIfp8nwhUeHofNL40K3oBuLX..cH2rlbXqxZKHaHcTKIunGehS8kW",
         "colors": "#ff637D"
     }
 ]
